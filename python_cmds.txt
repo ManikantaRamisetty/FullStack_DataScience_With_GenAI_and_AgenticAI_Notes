@@ -1,0 +1,90 @@
+python cmds.
+
+import sys!{sys.executable} -m pip install xgboost - if 
+
+python -m pip install mlflow
+python -m pip show mlflow
+python -m mlflow ui
+if you still see issue run below 
+%pip install mlflow
+
+
+MLFLOW : https://github.com/kodigitaccount/MLOPS/blob/main/1st%20code%20experiment.ipynb
+CICD : https://github.com/kodigitaccount/cicd_Github_Action
+
+pip install tensorflow
+pip show tensorflow
+pip install keras
+pip install pytorach
+pip install opencv-python
+pip install ultralytics
+pip install mediapie
+pip install langchain,langgraph
+
+pip show langchain,langgraph
+
+how to create ENV var's
+
+%pip install tensorflow
+
+Yes — if you are using Anaconda, let's install TensorFlow through Conda, rather than fighting with pip.
+
+1. Open Anaconda Prompt
+
+Run:
+
+conda activate base
+
+Check:
+
+python --version
+
+You currently appear to have Python 3.13.9.
+
+2. I recommend creating a separate ML environment
+
+This is safer than changing your Anaconda base environment:
+
+conda create -n ml python=3.12 -y
+
+Activate it:
+
+conda activate ml
+3. Install TensorFlow
+python -m pip install tensorflow
+
+Then verify:
+
+python -c "import tensorflow as tf; print(tf.__version__)"
+
+You should get a TensorFlow version instead of the No matching distribution error.
+
+4. Install Jupyter kernel
+
+This is important for your VS Code notebook:
+
+python -m pip install ipykernel
+
+Then:
+
+python -m ipykernel install --user --name ml --display-name "ML (Python 3.12)"
+5. Install your other ML packages
+
+Since you're also using XGBoost and MLflow, install them into this same environment:
+
+python -m pip install mlflow xgboost scikit-learn pandas numpy matplotlib seaborn
+6. Select the new environment in VS Code
+
+Open your .ipynb → Select Kernel → choose:
+
+ML (Python 3.12)
+
+Then test:
+
+import tensorflow as tf
+import xgboost
+import mlflow
+
+print("TensorFlow:", tf.__version__)
+print("XGBoost:", xgboost.__version__)
+print("MLflow:", mlflow.__version__)
